@@ -34,5 +34,12 @@ app.post('/api/v1/signup', (request, response) => {
     });
 });
 
+// -------- 404 ROUTE
+app.get('/*', (request, response) => {
+    response
+        .status(404)
+        .send(`<h1>404</h1><h3>Page not found</h3>`);
+});
+
 // -------- START SERVER -------- //
 app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
