@@ -34,6 +34,20 @@ app.post('/api/v1/signup', (request, response) => {
     });
 });
 
+app.get('/api/v1', (request, response) => {
+    const doc = {
+        message: 'Welcome to the Release Pro API',
+        endpoints: [
+            {
+                method: 'GET',
+                path: '/api/v1',
+                description: 'Describes all available endpoints'
+            }
+        ]
+    };
+    response.json(doc);
+})
+
 // -------- 404 ROUTE
 app.get('/*', (request, response) => {
     response
