@@ -1,0 +1,24 @@
+{
+  "name": "release-pro",
+  "version": "1.0.0",
+  "description": "App to help keep track of app releases",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnofhyrule/release-pro.git"
+  },
+  "author": "John Roman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnofhyrule/release-pro/issues"
+  },
+  "homepage": "https://github.com/johnofhyrule/release-pro#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.3"
+  }
+}
