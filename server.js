@@ -1,11 +1,11 @@
 // -------- EXTERNAL MODULES -------- //
 const express = require('express');
-const logger = require('./middlware/utils');
 const bodyParser = require('body-parser');
 // Require Database
 const db = require('./models');
 
 // -------- INTERNAL MODULES -------- //
+const utils = require('./middlware/utils');
 
 // -------- INSTANCE MODULES -------- //
 const app = express();
@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 4000;
 
 // -------- MIDDLEWARE -------- //
 // Logger Middleware
-app.use(logger);
+app.use(utils.logger);
 
 // BodyParser Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -49,11 +49,10 @@ app.get('/api/v1', (request, response) => {
 })
 
 // -------- 404 ROUTE
-app.get('/*', (request, response) => {
-    response
-        .status(404)
-        .send(`<h1>404</h1><h3>Page not found</h3>`);
-});
+app.use('/*', utils.notFound);
+
+// -------- 405 ROUTE
+app.use('/api/v1/*', utils.methodNotAllowed);
 
 // -------- START SERVER -------- //
 app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));

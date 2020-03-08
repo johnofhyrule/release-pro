@@ -7,4 +7,18 @@ const logger = (request, response, next) => {
     next();
 };
 
-module.exports = logger;
+const notFound = (request, response) => {
+    response
+        .status(404)
+        .send(`<h1>404</h1><h3>Page not found</h3>`);
+};
+
+const methodNotAllowed = (request, response) => {
+    response.status(405).json({ message: 'Method Not Allowed' })
+}
+
+module.exports = {
+    logger,
+    notFound,
+    methodNotAllowed
+};
