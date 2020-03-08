@@ -36,3 +36,11 @@
     border-bottom: #796eff 3px solid;
     cursor: pointer;
 }
+
+.release-btn {
+    color: #ffffff;
+    background-color: #796eff;
+    border: none;
+    cursor: pointer;
+    float: right;
+}

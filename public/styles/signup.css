@@ -39,9 +39,9 @@ h1 {
     font-family: 'PT Sans', sans-serif;
 }
 
-.container input:focus {
-    outline: 0;
+.form-control:focus {
     border-color: #796eff;
+    box-shadow: 0 0 0 0.1rem #796eff;
 }
 
 .container button {
