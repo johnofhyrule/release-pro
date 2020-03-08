@@ -7,6 +7,71 @@
     outline: 0;
 }
 
+#login-btn {
+    color: #ffffff;
+    background-color: #796eff;
+    border: none;
+    border-radius: 5%;
+}
+
+#signup-btn {
+    color: #ffffff;
+    background-color: #796eff;
+    border: none;
+    border-radius: 5%;
+}
+
 h1 {
     font-family: 'PT Sans', sans-serif;
+}
+
+.box1 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.box2 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #f8f9fa;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.box3 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.box4 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #f8f9fa;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.box5 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.content {
+    margin: 20vh 0;
+    padding: 30px;
+}
+
+.title {
+    padding-top: 30vh;
 }
