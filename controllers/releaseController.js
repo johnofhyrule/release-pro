@@ -5,50 +5,50 @@ const test = (request, response) => {
 };
 
 const index = (request, response) => {
-    db.User.find({}, (error, allUsers) => {
+    db.Release.find({}, (error, allReleases) => {
         if (error) return response.error(500, 'Something went wrong. Try again.');
-        response.success(200, allUsers);
+        response.success(200, allReleases);
     });
 };
 
 const create = (request, response) => {
-    db.User.create(request.body, (error, createdUser) => {
+    db.Release.create(request.body, (error, createdRelease) => {
         if (error) {
             // ALWAYS RETURN TO EXIT
             return response
                 .status(500)
-                .json({ message: 'Something went wrong. Try again.', error: error });
+                .json({ message: 'Something went wrong. Try again.' });
         }
-        response.success(201, createdUser);
+        response.success(201, createdRelease);
     });
 };
 
 const update = (request, response) => {
-    db.User.findByIdAndUpdate(
+    db.Release.findByIdAndUpdate(
         request.params.id,
         request.body,
         { new: true },
-        (error, updatedUser) => {
+        (error, updatedRelease) => {
             if (error) {
                 // ALWAYS RETURN TO EXIT
                 return response
                     .status(500)
                     .json({ message: 'Something went wrong. Try again.', error: error });
             }
-            response.success(200, updatedUser);
+            response.success(200, updatedRelease);
         }
     );
 };
 
 const destroy = (request, response) => {
-    db.User.findByIdAndDelete(request.params.id, (error, deletedUser) => {
+    db.Release.findByIdAndDelete(request.params.id, (error, deletedRelease) => {
         if (error) {
             // ALWAYS RETURN TO EXIT
             return response
                 .status(500)
-                .json({ message: 'Something went wrong. Try again', error: error });
+                .json({ message: 'Something went wrong. Try again.', error: error });
         }
-        response.success(200, deletedUser);
+        response.success(200, deletedRelease);
     });
 };
 
