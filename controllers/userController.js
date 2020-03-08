@@ -23,6 +23,18 @@ const create = (request, response) => {
     });
 };
 
+const show = (request, response) => {
+    db.User.findById(request.params.id, (error, foundUser) => {
+        if (error) {
+            // ALWAYS RETURN TO EXIT
+            return response
+                .status(500)
+                .json({ message: 'Something went wrong. Try again.', error: error });
+        }
+        response.success(200, foundUser);
+    });
+};
+
 const update = (request, response) => {
     db.User.findByIdAndUpdate(
         request.params.id,

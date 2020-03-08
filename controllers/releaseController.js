@@ -23,6 +23,18 @@ const create = (request, response) => {
     });
 };
 
+const show = (request, response) => {
+    db.Release.findById(request.params.id, (error, foundRelease) => {
+        if (error) {
+            // ALWAYS RETURN TO EXIT
+            return response
+                .status(500)
+                .json({ message: 'Something went wrong. Try again.', error: error });
+        }
+        response.success(200, foundRelease);
+    });
+};
+
 const update = (request, response) => {
     db.Release.findByIdAndUpdate(
         request.params.id,

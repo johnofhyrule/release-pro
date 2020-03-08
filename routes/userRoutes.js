@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const controllers = require('../controllers');
 
-//  BASE URL IS localhost:3000/api/v1/user
+//  BASE URL IS localhost:4000/api/v1/user
 
 // INDEX
 router.get('/', controllers.user.index);

@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const db = require('./models');
 
 // -------- INTERNAL MODULES -------- //
+const routes = require('./routes');
 const utils = require('./middleware/utils');
 const formatter = require('./middleware/formatter');
 
@@ -22,6 +23,9 @@ app.use(utils.logger);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// Formaatter Middleware
+app.use(formatter); 
+
 // -------- ROUTES -------- //
 // -------- VIEW ROUTES
 app.get('/', (request, response) => {
@@ -29,25 +33,11 @@ app.get('/', (request, response) => {
 });
 
 // -------- API ROUTES
-app.post('/api/v1/signup', (request, response) => {
-    db.User.create(request.body, (error, createdUser) => {
-        if (error) return response.status(400).json({ message: 'Bad request, please try again.'})
-    });
-});
+// USER ROUTE
+app.use('/api/v1/user', routes.user);
 
-app.get('/api/v1', (request, response) => {
-    const doc = {
-        message: 'Welcome to the Release Pro API',
-        endpoints: [
-            {
-                method: 'GET',
-                path: '/api/v1',
-                description: 'Describes all available endpoints'
-            }
-        ]
-    };
-    response.json(doc);
-});
+// RELEASE ROUTE
+app.use('/api/v1/release', routes.release)
 
 // -------- 404 ROUTE
 app.use('/*', utils.notFound);
