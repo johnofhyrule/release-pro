@@ -1,4 +1,4 @@
-### Release Pro
+# Release Pro
 
 ## Why Release Pro?
 Release Pro was created for engineering teams to use to help keep track of all the steps it takes for an app to be released for production. All the pertinent information is easily available for any member to find out about current releases and any previous release.
