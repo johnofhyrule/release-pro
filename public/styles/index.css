@@ -7,12 +7,24 @@
     outline: 0;
 }
 
+/* -------- Navbar Styling -------- */
 #login-btn {
     color: #ffffff;
     background-color: #796eff;
     border: none;
     border-radius: 5%;
     cursor: pointer;
+}
+
+.signup {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* -------- Body Styling -------- */
+h1 {
+    font-family: 'PT Sans', sans-serif;
 }
 
 #signup-btn {
@@ -23,8 +35,11 @@
     cursor: pointer;
 }
 
-h1 {
-    font-family: 'PT Sans', sans-serif;
+.modal-notify .modal-header {
+    border-radius: 3px 3px 0 0;
+}
+.modal-notify .modal-content {
+    border-radius: 3px;
 }
 
 .box1 {
