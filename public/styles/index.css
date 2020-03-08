@@ -12,6 +12,7 @@
     background-color: #796eff;
     border: none;
     border-radius: 5%;
+    cursor: pointer;
 }
 
 #signup-btn {
@@ -19,6 +20,7 @@
     background-color: #796eff;
     border: none;
     border-radius: 5%;
+    cursor: pointer;
 }
 
 h1 {

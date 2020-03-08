@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: 0;
+}
+
+#profile-btn {
+    color: #796eff;
+    background-color: none;
+    border: none;
+    border-radius: 5%;
+    cursor: pointer;
+}
+
+.box1 {
+    padding-top: 35px;
+    background-color: #f8f9fa;
+    width: 100vw;
+    height: 100vh;
+}
+
+.nav-pills .nav-link {
+    background-color: #f8f9fa;
+    color: #796eff;
+    border-radius: 0%;
+    cursor: pointer;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #ffffff;
+    border-bottom: #796eff 3px solid;
+    cursor: pointer;
+}
