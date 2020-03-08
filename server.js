@@ -5,7 +5,8 @@ const bodyParser = require('body-parser');
 const db = require('./models');
 
 // -------- INTERNAL MODULES -------- //
-const utils = require('./middlware/utils');
+const utils = require('./middleware/utils');
+const formatter = require('./middleware/formatter');
 
 // -------- INSTANCE MODULES -------- //
 const app = express();
