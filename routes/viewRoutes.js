@@ -12,7 +12,7 @@ router.get('/', (request, response) => {
 });
 
 router.get('/documentation', (request, response) => {
-    response.sendFile(path.join(__dirname, '../views/documentation'));
+    response.sendFile(path.join(__dirname, '../views/documentation.html'));
 });
 
 module.exports = router;

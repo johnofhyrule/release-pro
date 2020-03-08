@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const releaseSchema = new Schema ({
+const releaseSchema = new mongoose.Schema({
     build: {
         type: String,
         required: [true, 'Build type required'],
