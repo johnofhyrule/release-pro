@@ -32,12 +32,13 @@
 }
 
 .nav-pills .nav-link.active {
-    background-color: #ffffff;
+    background-color: #f8f9fa;
+    color: #796eff;
     border-bottom: #796eff 3px solid;
     cursor: pointer;
 }
 
-.release-btn {
+#release-btn {
     color: #ffffff;
     background-color: #796eff;
     border: none;

@@ -32,6 +32,11 @@ h1 {
     font-family: 'PT Sans', sans-serif;
 }
 
+.why {
+    margin: 3vh 3vw;
+    padding: 30px;
+}
+
 #signup-btn {
     color: #ffffff;
     background-color: #796eff;
