@@ -46,7 +46,7 @@ app.get('/api/v1', (request, response) => {
         ]
     };
     response.json(doc);
-})
+});
 
 // -------- 404 ROUTE
 app.use('/*', utils.notFound);

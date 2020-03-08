@@ -11,5 +11,6 @@ mongoose.connect(MONGODB_URI, {
     .catch((error) => console.log(error));
 
 module.exports = {
-    User:require('./User'),
+    User: require('./User'),
+    Release: require('./ReleaseForm')
 };
