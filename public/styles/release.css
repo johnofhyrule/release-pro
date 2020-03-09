@@ -39,6 +39,9 @@
 }
 
 #release-btn {
+    /* display: flex;
+    flex-direction: row;
+    justify-content: center; */
     color: #ffffff;
     background-color: #796eff;
     border: none;

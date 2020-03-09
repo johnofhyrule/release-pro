@@ -1,4 +1,4 @@
-var data = [
+let data = [
     ['Teams & Features', 'Slack Channel', 'Engineering Manager', 'Product Manager', 'Tech Lead', 'iOS Dev', 'Android Dev', 'QE', 'Product Spec', 'Tech Spec', 'Testing Spec', 'Main Pull Requests'],
     [],
     ['RIDER',],
@@ -12,8 +12,8 @@ var data = [
     ['Payout', '#payout', 'Chris', 'Pete', 'Dolly', 'Steph', 'Brady'],
 ];
 
-var container = document.getElementById('example');
-var hot = new Handsontable(container, {
+let container = document.getElementById('example');
+let hot = new Handsontable(container, {
     data: data,
     rowHeaders: true,
     colHeaders: true,
