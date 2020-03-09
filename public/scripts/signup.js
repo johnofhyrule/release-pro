@@ -53,7 +53,7 @@ function handleSignupSubmit(event) {
         })
             .then((dataStream) => dataStream.json())
             .then((dataObj) => {
-                console.log(dataObj);
+                // console.log(dataObj);
                 window.location = '/login';
             })
             .catch((error) => console.log(error));

@@ -20,8 +20,6 @@
 .box1 {
     padding-top: 35px;
     background-color: #f8f9fa;
-    width: 100vw;
-    height: 100vh;
 }
 
 .nav-pills .nav-link {
@@ -39,12 +37,9 @@
 }
 
 #release-btn {
-    /* display: flex;
-    flex-direction: row;
-    justify-content: center; */
     color: #ffffff;
     background-color: #796eff;
     border: none;
     cursor: pointer;
-    float: right;
+    margin-left: auto;
 }

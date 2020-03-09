@@ -1,3 +1,26 @@
+/* --------- BOOTSRAP JS SWITCH TABS -------- */
+$('#pills-tab a').on('click', function (e) {
+    e.preventDefault()
+    console.log('trigger!!', $(this).tab('show'))
+    $(this).tab('show')
+})
+
+// $('#pills-tab a').on('click', function (e) {
+//     e.preventDefault()
+//     $('#pills-tab a[href="#pills-featuresownerdoc"]').tab('show')
+// })
+
+// $('#pills-tab a').on('click', function (e) {
+//     e.preventDefault()
+//     $('#pills-tab a[href="#pills-calendar"]').tab('show')
+// })
+
+// $('#pills-tab a').on('click', function (e) {
+//     e.preventDefault()
+//     $('#pills-tab a[href="#pills-profile"]').tab('show')
+// })
+
+/* --------- HANDSONTABLE JS SPREADSHEET DATA -------- */
 let data = [
     ['Teams & Features', 'Slack Channel', 'Engineering Manager', 'Product Manager', 'Tech Lead', 'iOS Dev', 'Android Dev', 'QE', 'Product Spec', 'Tech Spec', 'Testing Spec', 'Main Pull Requests'],
     [],
