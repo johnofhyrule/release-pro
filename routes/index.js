@@ -1,7 +1,7 @@
 console.log('Router is working');
 
 module.exports = {
-    user: require('./user'),
-    release: require('./release'),
     auth: require('./auth'),
+    users: require('./users'),
+    release: require('./release'),
 };
