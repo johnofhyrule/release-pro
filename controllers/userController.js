@@ -1,8 +1,8 @@
 const db = require('../models');
-const db = require('../bcryptjs');
+const bcrypt = require('bcryptjs');
 
 // POST Signup Create
-const signup = (reqeust, response) => {
+const signup = (request, response) => {
     // Validate Signup Form
     if (!request.body.firstName || !request.body.lastName || !request.body.email || !request.body.role) {
         return response.status(400).json({ message: 'All fields are required' });
@@ -96,7 +96,7 @@ const deleteSession = (request, response) => {
     }
 
     request.session.destroy((error) => {
-        if (error) return response.status.(400).json(error);
+        if (error) return response.status(400).json(error);
 
         response.json({ status: 200 });
     });

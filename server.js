@@ -1,5 +1,7 @@
 // -------- EXTERNAL MODULES -------- //
 const express = require('express');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 const bodyParser = require('body-parser');
 // Require Database
 const db = require('./models');
@@ -24,20 +26,30 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Formaatter Middleware
-app.use(formatter); 
+app.use(formatter);
+
+// Server Public Directory
+app.use(express.static(__dirname + '/public'));
+
+// Session
+app.use(session({
+    store: new MongoStore({
+        url: process.env.MONGODB_URI || 'mongodb://localhost:27017/release-app'
+    }),
+    secret: 'change me now', // FIXME fix this secret key
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        maxAge: 1000 * 60 * 60 * 24 * 7 // this cookie will last one week
+    }
+}))
 
 // -------- ROUTES -------- //
-// -------- VIEW ROUTES
-app.get('/', (request, response) => {
-    response.send('<h1>Profile</h1>');
-});
-
 // -------- API ROUTES
-// USER ROUTE
-app.use('/api/v1/user', routes.user);
+app.use('/api/v1', routes.api);
 
-// RELEASE ROUTE
-app.use('/api/v1/release', routes.release)
+// -------- HTML ROUTES
+app.use('/', routes.views);
 
 // -------- 404 ROUTE
 app.use('/*', utils.notFound);

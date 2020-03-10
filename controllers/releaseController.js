@@ -1,16 +1,5 @@
 const db = require('../models');
 
-const test = (request, response) => {
-    response.json({ message: 'Test' });
-};
-
-const index = (request, response) => {
-    db.Release.find({}, (error, allReleases) => {
-        if (error) return response.error(500, 'Something went wrong. Try again.');
-        response.success(200, allReleases);
-    });
-};
-
 const create = (request, response) => {
     db.Release.create(request.body, (error, createdRelease) => {
         if (error) {
@@ -65,10 +54,8 @@ const destroy = (request, response) => {
 };
 
 module.exports = {
-    test,
-    index,
     create,
     show,
     update,
-    destroy
+    destroy,
 };

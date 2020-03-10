@@ -4,5 +4,5 @@ module.exports = {
     user: require('./userRoutes'),
     release: require('./releaseRoutes'),
     views: require('./viewRoutes'),
-    api: require('./api')
+    api: require('./api'),
 };
