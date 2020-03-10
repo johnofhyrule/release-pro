@@ -4,6 +4,7 @@ const ctrl = require('../controllers');
 
 // Current path = /api/v1/users
 router.get('/:id', ctrl.users.show);
-router.put('/:id', ctrl.users.edit);
+router.put('/:id', ctrl.users.update);
+router.post('/:id', ctrl.users.destroy);
 
 module.exports = router;

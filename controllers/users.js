@@ -19,7 +19,7 @@ const show = (request, response) => {
     });
 };
 
-const edit = (request, response) => {
+const update = (request, response) => {
     if (!request.session.currentUser) return response.status(401).json({
         status: 401,
         message: 'Something went wrong, please try again.'
@@ -42,7 +42,27 @@ const edit = (request, response) => {
     );
 };
 
+const destroy = (request, response) => {
+    if (!request.session.currentUser) return response.status(401).json({
+        status: 401,
+        message: 'Something went wrong, please try again.'
+    });
+
+    db.User.findByIdAndDelete(request.session.currentUser, (error, deletedUser) => {
+        if (error) return response.status(500).json({
+            status: 500,
+            message: 'Something went wrong, please try again.'
+        })
+
+        response.status(200).json({
+            status: 200,
+            data: deletedUser,
+        });
+    });
+};
+
 module.exports = {
     show,
-    edit,
+    update,
+    destroy,
 };

@@ -45,9 +45,6 @@ app.use(session({
 }))
 
 // -------- ROUTES -------- //
-// -------- API ROUTES
-// app.use('/api/v1', routes.api);
-
 // -------- HTML ROUTES
 app.use('/', routes.auth);
 app.use('/', routes.users);
