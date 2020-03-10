@@ -5,23 +5,8 @@ $('#pills-tab a').on('click', function (e) {
     $(this).tab('show')
 })
 
-// $('#pills-tab a').on('click', function (e) {
-//     e.preventDefault()
-//     $('#pills-tab a[href="#pills-featuresownerdoc"]').tab('show')
-// })
-
-// $('#pills-tab a').on('click', function (e) {
-//     e.preventDefault()
-//     $('#pills-tab a[href="#pills-calendar"]').tab('show')
-// })
-
-// $('#pills-tab a').on('click', function (e) {
-//     e.preventDefault()
-//     $('#pills-tab a[href="#pills-profile"]').tab('show')
-// })
-
 /* --------- HANDSONTABLE JS SPREADSHEET DATA -------- */
-let data = [
+var data = [
     ['Teams & Features', 'Slack Channel', 'Engineering Manager', 'Product Manager', 'Tech Lead', 'iOS Dev', 'Android Dev', 'QE', 'Product Spec', 'Tech Spec', 'Testing Spec', 'Main Pull Requests'],
     [],
     ['RIDER',],
@@ -35,11 +20,12 @@ let data = [
     ['Payout', '#payout', 'Chris', 'Pete', 'Dolly', 'Steph', 'Brady'],
 ];
 
-let container = document.getElementById('example');
-let hot = new Handsontable(container, {
+var example1 = document.getElementById('example1');
+var hot = new Handsontable(example1, {
     data: data,
-    rowHeaders: true,
     colHeaders: true,
+    rowHeaders: true,
+    preventOverflow: 'horizontal',
     filters: true,
     dropdownMenu: true,
     licenseKey: 'non-commercial-and-evaluation'
