@@ -40,7 +40,7 @@ const signup = (request, response) => {
 };
 
 // Post Login - Create Session
-const createSession = (request, response) => {
+const login = (request, response) => {
     if(!request.body.email || !request.body.password) {
         return response.status(400).json({
             status: 400,
@@ -50,7 +50,7 @@ const createSession = (request, response) => {
     db.User.findOne({ email: request.body.email }, (error, foundUser) => {
         if (error) return response.status(500).json({
             status: 500,
-            errors: [{ message: 'Something went wrong. Please try again.' }],
+            errors: [{ message: 'Something went wrong, please try again.' }],
         });
         if (!foundUser) {
             return response.status(400).json({
@@ -61,7 +61,7 @@ const createSession = (request, response) => {
         bcrypt.compare(reqeust.body.password, foundUser.password, (error, isMatch) => {
             if (error) return response.status(500).json({
                 status: 500,
-                errors: [{ messages: 'Something went wrong. Please try again.' }],
+                errors: [{ messages: 'Something went wrong, please try again.' }],
             });
             if (isMatch) {
                 request.session.loggeIn = true;
@@ -90,7 +90,7 @@ const verify = (request, response) => {
 };
 
 // DELETE deleteSession (Logout)
-const deleteSession = (request, response) => {
+const logout = (request, response) => {
     if (!request.session.currentUser) {
         return response.status(401).json({ message: 'Unauthorized, please login and try again.' });
     }
@@ -104,7 +104,7 @@ const deleteSession = (request, response) => {
 
 module.exports = {
     signup,
-    createSession,
+    login,
     verify,
-    deleteSession
+    logout
 }

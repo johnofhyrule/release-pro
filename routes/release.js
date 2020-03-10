@@ -2,8 +2,7 @@ const express = require('express');
 const router = express.Router();
 const ctrl = require('../controllers');
 
-//  BASE URL IS localhost:3000/api/v1/release
-
+// Current path = /api/v1/release
 // INDEX
 router.get('/', ctrl.release.index);
 

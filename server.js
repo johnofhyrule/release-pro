@@ -46,10 +46,12 @@ app.use(session({
 
 // -------- ROUTES -------- //
 // -------- API ROUTES
-app.use('/api/v1', routes.api);
+// app.use('/api/v1', routes.api);
 
 // -------- HTML ROUTES
-app.use('/', routes.views);
+app.use('/', routes.auth);
+app.use('/', routes.users);
+app.use('/', routes.release);
 
 // -------- 404 ROUTE
 app.use('/*', utils.notFound);

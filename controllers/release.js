@@ -1,5 +1,19 @@
 const db = require('../models');
 
+//Index Release
+const index = (request, respnonse) => {
+    db.Release.find(request.query, (error, foundRelease) => {
+        if (error) return response.status(500).json({
+            status:500,
+            message: error,
+        });
+        response.status(200).json({
+            status: 200,
+            data: foundRelease,
+        });
+    });
+};
+
 // Create Release
 const create = (request, response) => {
     const newRelease = request.body;
@@ -59,6 +73,7 @@ const destroy = (request, response) => {
 };
 
 module.exports = {
+    index,
     create,
     show,
     update,
