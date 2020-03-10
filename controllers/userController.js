@@ -106,5 +106,5 @@ module.exports = {
     signup,
     createSession,
     verify,
-    deleteSession,
+    deleteSession
 }

@@ -8,7 +8,7 @@ const controllers = require('../controllers');
 router.get('/', controllers.release.index);
 
 // CREATE
-router.post('/', controllers.release.create);
+router.post('/create', controllers.release.create);
 
 // SHOW
 router.get('/:id', controllers.release.show);

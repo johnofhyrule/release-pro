@@ -36,7 +36,7 @@ app.use(session({
     store: new MongoStore({
         url: process.env.MONGODB_URI || 'mongodb://localhost:27017/release-app'
     }),
-    secret: 'change me now', // FIXME fix this secret key
+    secret: 'kaTe9-j24np-232Of92-kjRwr2-nvIr8-ruda1-sei-uyQ3-javUnpAo34-h2Nud4t3',
     resave: false,
     saveUninitialized: false,
     cookie: {

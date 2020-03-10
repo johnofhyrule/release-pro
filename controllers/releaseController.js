@@ -1,55 +1,60 @@
 const db = require('../models');
 
+// Create Release
 const create = (request, response) => {
-    db.Release.create(request.body, (error, createdRelease) => {
-        if (error) {
-            // ALWAYS RETURN TO EXIT
-            return response
-                .status(500)
-                .json({ message: 'Something went wrong. Try again.' });
-        }
-        response.success(201, createdRelease);
+    const newRelease = request.body;
+    newRelease.userId = request.session.currentUser.id;
+    db.Release.create(newRelease, (error, savedRelease) => {
+        if (error) return response.status(500).json({
+            status: 500,
+            message: error,
+        });
+        response.status(200).json({
+            status: 200,
+            data: savedRelease,
+        });
     });
 };
 
+// Show Release
 const show = (request, response) => {
     db.Release.findById(request.params.id, (error, foundRelease) => {
-        if (error) {
-            // ALWAYS RETURN TO EXIT
-            return response
-                .status(500)
-                .json({ message: 'Something went wrong. Try again.', error: error });
-        }
-        response.success(200, foundRelease);
+        if (error) return response.status(500).json({
+            status: 500,
+            message:error,
+        });
+        response.status(200).json({
+            status: 200,
+            data: foundRelease,
+        });
     });
 };
 
+// Update Release
 const update = (request, response) => {
-    db.Release.findByIdAndUpdate(
-        request.params.id,
-        request.body,
-        { new: true },
-        (error, updatedRelease) => {
-            if (error) {
-                // ALWAYS RETURN TO EXIT
-                return response
-                    .status(500)
-                    .json({ message: 'Something went wrong. Try again.', error: error });
-            }
-            response.success(200, updatedRelease);
-        }
-    );
+    db.Release.findByIdAndUpdate(request.params.id, request.body, { new: true }, (error, updatedRelease) => {
+        if (error) return response.status(500).json({
+            status: 500,
+            message: error,
+        });
+        response.status(200).json({
+            status: 200,
+            data: updatedRelease,
+        });
+    });
 };
 
+// Delete Release
 const destroy = (request, response) => {
     db.Release.findByIdAndDelete(request.params.id, (error, deletedRelease) => {
-        if (error) {
-            // ALWAYS RETURN TO EXIT
-            return response
-                .status(500)
-                .json({ message: 'Something went wrong. Try again.', error: error });
-        }
-        response.success(200, deletedRelease);
+        if (error) return response.status(500).json({
+            status: 500,
+            message: error,
+        });
+        response.status(200).json({
+            status: 200,
+            data: deletedRelease,
+        });
     });
 };
 
@@ -57,5 +62,5 @@ module.exports = {
     create,
     show,
     update,
-    destroy,
+    destroy
 };
