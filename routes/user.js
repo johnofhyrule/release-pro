@@ -1,23 +1,20 @@
 const express = require('express');
 const router = express.Router();
-const controllers = require('../controllers');
+const ctrl = require('../controllers');
 
 //  BASE URL IS localhost:4000/api/v1/user
 
-// INDEX
-router.get('/', controllers.user.index);
-
 // CREATE
-router.post('/', controllers.user.create);
+router.post('/', ctrl.user.create);
 
 // SHOW -> id === user id
-router.get('/:id', controllers.user.show);
+router.get('/:id', ctrl.user.show);
 
 // UPDATE -> id === user id
 // WILL RECEIVE JSON FOR UPDATE IN request.body
-router.put('/:id', controllers.user.update);
+router.put('/:id', ctrl.user.update);
 
 // DELETE -> id === user id
-router.delete('/:id', controllers.user.destroy);
+router.delete('/:id', ctrl.user.destroy);
 
 module.exports = router;
