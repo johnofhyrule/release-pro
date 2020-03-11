@@ -32,10 +32,10 @@
     <div class="box1">
         <h1>Add New Release</h1>
         <div class="container">
-            <form>
+            <form class="form" id="addRelease">
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Select Release Type</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
+                    <select class="form-control" id="type">
                         <option>Alpha</option>
                         <option>Beta</option>
                         <option>Production</option>
@@ -43,18 +43,18 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">OS</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
+                    <select class="form-control" id="os">
                         <option>iOS</option>
                         <option>Android</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputVersionNumber">Version Number</label>
-                    <input type="text" class="form-control" id="exampleInputVersionNumber" aria-describedby="versionNumberHelp" placeholder="1.3.1483">
+                    <input type="text" class="form-control" id="version" aria-describedby="versionNumberHelp" placeholder="1.3.1483">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Release Manager</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
+                    <select class="form-control" id="manager">
                         <option>Release Manager 1</option>
                         <option>Release Manager 2</option>
                         <option>Release Manager 3</option>
@@ -63,11 +63,11 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputExperiments">Experiments</label>
-                    <input type="text" class="form-control" id="exampleInput" aria-describedby="versionNumberHelp" placeholder="New request button experiment">
+                    <input type="text" class="form-control" id="Experiments" aria-describedby="versionNumberHelp" placeholder="New request button experiment">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputNotes">Notes</label>
-                    <input type="text" class="form-control" id="exampleInput" aria-describedby="notesHelp" placeholder="Notes about release">
+                    <input type="text" class="form-control" id="notes" aria-describedby="notesHelp" placeholder="Notes about release">
                 </div>
                 <button type="submit" class="btn">Create Release</button>
             </form>
