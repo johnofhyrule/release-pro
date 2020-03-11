@@ -12,7 +12,6 @@
     color: #796eff;
     background-color: none;
     border: none;
-    border-radius: 5%;
     cursor: pointer;
 }
 
@@ -47,3 +46,22 @@
 /* -------- Sheet Styling -------- */
 
 /* -------- Profile Styling -------- */
+/* #profile-picture {
+    width:20em;
+} */
+.circle-profile{
+    width: 200px;
+    height: 200px;
+    background-image: url('/public/images/Screen\ Shot\ 2020-03-10\ at\ 8.02.24\ PM.png');
+    background-size: cover;
+    display: block;
+    border: 5px solid #796eff;
+    border-radius: 100px;
+}
+
+#edit-btn {
+    color: #796eff;
+    background-color: none;
+    border: none;
+    cursor: pointer;
+}
