@@ -67,8 +67,18 @@
 }
 
 /* -------- CALENDAR STYLING -------- */
+.calendar {
+    height: 95vh;
+    /* width: 95vw; */
+}
+
 h2 {
     font-size: 600%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
 }
 .stroke {
     color: #ffffff;
