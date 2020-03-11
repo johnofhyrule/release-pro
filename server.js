@@ -28,9 +28,6 @@ app.use(bodyParser.json());
 // Formaatter Middleware
 app.use(formatter);
 
-// Server Public Directory
-app.use(express.static(__dirname + '/public'));
-
 // Session
 app.use(session({
     store: new MongoStore({
@@ -45,9 +42,8 @@ app.use(session({
 }))
 
 // -------- ROUTES -------- //
-app.get('/', (request, response) => {
-    response.send('<h1>This is home</h1>')
-})
+// -------- VIEW ROUTES
+app.use('/', routes.views);
 
 // -------- HTML ROUTES
 app.use('/api/v1/auth', routes.auth);
