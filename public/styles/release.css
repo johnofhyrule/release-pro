@@ -45,14 +45,37 @@
 
 /* -------- RELEASE STYLING -------- */
 #edit-release-btn {
-    color: #ffffff;
-    background-color: #796eff;
+    color: #796eff;
+    background-color: none;
     border: none;
     cursor: pointer;
-    margin-right: auto;
+}
+
+.card {
+    border: 1px solid #796eff;
 }
 
 /* -------- FEATURES OWNER DOC STYLING -------- */
+#featuresowner {
+    height: 85vh;
+    width: 100vw;
+}
+
+.hot {
+    height: 70vh;
+    width: 100vw;
+}
+
+/* -------- CALENDAR STYLING -------- */
+h2 {
+    font-size: 600%;
+}
+.stroke {
+    color: #ffffff;
+    /* -webkit-text-fill-color: rgba(0,0,0,.4); */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #796eff
+}
 
 /* -------- PROFILE STYLING -------- */
 .col-centered {
@@ -66,7 +89,7 @@
     background-image: url('/public/images/Screen\ Shot\ 2020-03-10\ at\ 8.02.24\ PM.png');
     background-size: cover;
     display: block;
-    border: 5px solid #796eff;
+    border:3px solid #796eff;
     border-radius: 100px;
 }
 

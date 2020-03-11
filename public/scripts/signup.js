@@ -1,9 +1,9 @@
 const form = document.getElementById('signupForm');
 
-// --------- SUBMIT EVENT LISTENER
+// -------- SUBMIT EVENT LISTENER
 form.addEventListener('submit', handleSignupSubmit);
 
-// --------- HANDLE SUBMIT
+// -------- HANDLE SUBMIT
 function handleSignupSubmit(event) {
     let formIsValid = true;
     const userData = {};
