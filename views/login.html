@@ -6,10 +6,10 @@
     <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- CUSTOM CSS -->
-    <link rel="stylesheet" href="./styles/signup.css">
+    <link rel="stylesheet" href="./styles/login.css">
     <!-- CUSTOM JS -->
-    <script defer src="./scripts/signup.js"></script>
-    <title>Release Pro: Signup</title>
+    <script defer src="./scripts/login.js"></script>
+    <title>Release Pro: Login</title>
 </head>
 <body>
     <!-- NAVBAR -->
@@ -57,35 +57,18 @@
     </nav>
 
     <div class="box1">
-        <h1>Signup for Release Pro</h1>
+        <h1>Login for Release Pro</h1>
         <div class="container">
-            <form id="signupForm">
+            <form id="loginForm">
                 <div class="form-group">
-                    <label for="exampleInputFirstName">First Name</label>
-                    <input type="name" class="form-control" id="firstname" aria-describedby="firstNameHelp" placeholder="First Name">
+                    <label for="exampleInputFirstName">Email</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Your email">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputLastName">Last Name</label>
-                    <input type="name" class="form-control" id="lastname" aria-describedby="lastNameHelp" placeholder="Last Name">
+                    <label for="exampleInputLastName">Password</label>
+                    <input type="password" class="form-control" id="password" aria-describedby="passwordHelp" placeholder="Your password">
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail">Email address</label>
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="name@email.com">
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1">Select Role</label>
-                    <select class="form-control" id="role">
-                        <option>Release Manager</option>
-                        <option>Quality Engineer</option>
-                        <option>Engineering Manager</option>
-                        <option>Mobile Engineer</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Password">
-                </div>
-                <button type="submit" class="btn">Signup</button>
+                <button type="submit" class="btn">Login</button>
             </form>
         </div>
     </div>

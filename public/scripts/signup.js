@@ -5,9 +5,22 @@ form.addEventListener('submit', handleSignupSubmit);
 
 // -------- HANDLE SUBMIT
 function handleSignupSubmit(event) {
-    let formIsValid = true;
-    const userData = {};
+    let formIsValid = true
     event.preventDefault();
+
+    const firstname = document.getElementById('firstname').value;
+    const lastname = document.getElementById('lastname').value;
+    const email = document.getElementById('email').value;
+    const role = document.getElementById('role').value;
+    const password = document.getElementById('password').value;
+
+    const userData = {
+        firstname: firstname,
+        lastname: lastname,
+        email: email,
+        role: role,
+        password: password,
+    }
 
     // Clear Alert Messages
     document.querySelectorAll('.alert').forEach((alert) => alert.remove());
@@ -44,7 +57,7 @@ function handleSignupSubmit(event) {
 
     if (formIsValid) {
         // SUBMIT DATA TO SERVER
-        fetch('/api/v1/signup', {
+        fetch('/api/v1/auth/signup', {
             method: 'POST',
             header: {
                 'Content-Type': 'application/json',
