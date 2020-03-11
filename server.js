@@ -45,10 +45,14 @@ app.use(session({
 }))
 
 // -------- ROUTES -------- //
+app.get('/', (request, response) => {
+    response.send('<h1>This is home</h1>')
+})
+
 // -------- HTML ROUTES
-app.use('/', routes.auth);
-app.use('/', routes.users);
-app.use('/', routes.release);
+app.use('/api/v1/auth', routes.auth);
+app.use('/api/v1/users', routes.users);
+app.use('/api/v1/release', routes.release);
 
 // -------- 404 ROUTE
 app.use('/*', utils.notFound);

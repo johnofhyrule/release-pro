@@ -87,7 +87,7 @@ const verify = (request, response) => {
         request.session.currentUser})
     }
 
-    response.status(401).json({ message: 'You aren not Authenticated.' })
+    response.status(401).json({ message: 'You are not Authenticated.' })
 };
 
 // DELETE deleteSession (Logout)

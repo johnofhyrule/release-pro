@@ -69,7 +69,6 @@
 /* -------- CALENDAR STYLING -------- */
 .calendar {
     height: 95vh;
-    /* width: 95vw; */
 }
 
 h2 {
@@ -82,7 +81,6 @@ h2 {
 }
 .stroke {
     color: #ffffff;
-    /* -webkit-text-fill-color: rgba(0,0,0,.4); */
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #796eff
 }

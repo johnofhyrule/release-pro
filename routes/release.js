@@ -5,16 +5,12 @@ const ctrl = require('../controllers');
 // Current path = /api/v1/release
 // INDEX
 router.get('/', ctrl.release.index);
-
 // CREATE
 router.post('/create', ctrl.release.create);
-
 // SHOW
 router.get('/:id', ctrl.release.show);
-
 // UPDATE
 router.put('/:id', ctrl.release.update);
-
 // DELETE
 router.delete('/:id', ctrl.release.destroy);
 
