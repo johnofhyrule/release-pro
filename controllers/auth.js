@@ -26,6 +26,7 @@ const signup = (request, response) => {
                     firstName,
                     lastName,
                     email,
+                    role,
                     password: hash,
                 };
 

@@ -7,7 +7,7 @@
     outline: 0;
 }
 
-/* -------- Navbar Styling -------- */
+/* -------- NAVBAR STYLING-------- */
 #log-out-btn {
     color: #796eff;
     background-color: none;
@@ -15,7 +15,7 @@
     cursor: pointer;
 }
 
-/* -------- Body Styling -------- */
+/* -------- BODY STYLING-------- */
 .box1 {
     padding-top: 35px;
     background-color: #f8f9fa;
@@ -43,12 +43,23 @@
     margin-left: auto;
 }
 
-/* -------- Sheet Styling -------- */
+/* -------- RELEASE STYLING -------- */
+#edit-release-btn {
+    color: #ffffff;
+    background-color: #796eff;
+    border: none;
+    cursor: pointer;
+    margin-right: auto;
+}
 
-/* -------- Profile Styling -------- */
-/* #profile-picture {
-    width:20em;
-} */
+/* -------- FEATURES OWNER DOC STYLING -------- */
+
+/* -------- PROFILE STYLING -------- */
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
 .circle-profile{
     width: 200px;
     height: 200px;
