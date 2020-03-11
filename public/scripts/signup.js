@@ -59,7 +59,7 @@ function handleSignupSubmit(event) {
         // SUBMIT DATA TO SERVER
         fetch('/api/v1/auth/signup', {
             method: 'POST',
-            header: {
+            headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(userData),

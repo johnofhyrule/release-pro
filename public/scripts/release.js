@@ -90,7 +90,7 @@ let userProfile = '';
 
 // Get user information
 function getUser() {
-    fetch('api/v1/user', {
+    fetch('api/v1/users', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -99,6 +99,7 @@ function getUser() {
     })
     .then((dataStream) => dataStream.json())
     .then((dataObj) => {
+        console.log(dataObj)
         renderProfile(dataObj)
     })
     .catch((error) => console.log(error));
@@ -110,7 +111,8 @@ getUser();
 function renderProfile(dataObj) {
     const name = document.getElementById('name');
     name.innerHTML = "";
-    name.innerHTML = `${dataObj.data.firstName} ${dataObj.data.lastName}`;
+    name.innerHTML = `${dataObj.data.firstName}
+`;
 
     const email = document.getElementById('email');
     email.innerHTML = "";

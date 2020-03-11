@@ -6,7 +6,7 @@
     <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- CUSTOM CSS -->
-    <link rel="stylesheet" href=".styles/editprofile.css">
+    <link rel="stylesheet" href="./styles/editprofile.css">
     <!-- CUSTOM JS -->
     <script defer src=".scripts/editprofile.js"></script>
     <title>Release Pro: Edit Profile</title>
@@ -59,26 +59,26 @@
     <div class="box1">
         <h1>Edit Profile</h1>
         <div class="container">
-            <form>
+            <form class="profile-form">
                 <div class="form-group">
                     <label for="exampleInputFirstName">First Name</label>
-                    <input type="name" class="form-control" id="exampleInputFirstName" aria-describedby="firstNameHelp" placeholder="First Name">
+                    <input type="name" class="form-control" id="firstName" aria-describedby="firstNameHelp" placeholder="First Name">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputLastName">Last Name</label>
-                    <input type="name" class="form-control" id="exampleInputLastName" aria-describedby="lastNameHelp" placeholder="Last Name">
+                    <input type="name" class="form-control" id="lastName" aria-describedby="lastNameHelp" placeholder="Last Name">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="name@email.com">
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="name@email.com">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputSlackHandle">Slack Handle</label>
-                    <input type="name" class="form-control" id="exampleInputSlackHandle" aria-describedby="slackHandleHelp" placeholder="@slackhandle">
+                    <input type="name" class="form-control" id="slackHandle" aria-describedby="slackHandleHelp" placeholder="@slackhandle">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Select Role</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
+                    <select class="form-control" id="role">
                         <option>Release Manager</option>
                         <option>Quality Engineer</option>
                         <option>Engineering Manager</option>
@@ -87,13 +87,24 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputTeams">Teams I'm on</label>
-                    <input type="text" class="form-control" id="exampleInputTeams" placeholder="Rider, Driver, QE">
+                    <input type="text" class="form-control" id="teams" placeholder="Rider, Driver, QE">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputProjects">Projects I've worked on</label>
-                    <input type="text" class="form-control" id="exampleInputProjects" placeholder="l10n, payments, routes">
+                    <input type="text" class="form-control" id="projects" placeholder="l10n, payments, routes">
                 </div>
-                <button type="submit" class="btn">Edit Profile</button>
+                <div class="row">
+                    <div class="col-md-6 left">
+                        <div class="edit">
+                            <button type="submit" class="btn-edit">Edit Profile</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 right">
+                        <div class="submit">
+                            <button type="submit" class="btn-delete">Delete Profile</button>
+                        </div>
+                    </div>
+                </div>
             </form>
         </div>
     </div>

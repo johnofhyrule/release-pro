@@ -7,6 +7,7 @@ const show = (request, response) => {
     })
 
     db.User.findById(request.session.currentUser.id, (error, foundUser) => {
+        // console.log(currentUser);
         if (error) return response.status(500).json({
             status: 500,
             message: 'Something went wrong, please try again.'

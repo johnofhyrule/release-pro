@@ -4,7 +4,7 @@ const ctrl = require('../controllers');
 
 // Current path = /api/v1/users
 // SHOW
-router.get('/:id', ctrl.users.show);
+router.get('/', ctrl.users.show);
 // UPDATE
 router.put('/:id', ctrl.users.update);
 // DELETE

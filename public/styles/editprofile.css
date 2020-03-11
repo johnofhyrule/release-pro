@@ -45,7 +45,7 @@ h1 {
     box-shadow: 0 0 0 0.1rem #796eff;
 }
 
-.container button {
+.btn-edit {
     cursor: pointer;
     background-color: #796eff;
     color: #fff;
@@ -55,6 +55,18 @@ h1 {
     padding: 7px;
     margin-top: 20px;
     width: 100%;
-    float:right;
+    padding-left: 1%;
+}
+
+.btn-delete {
+    cursor: pointer;
+    background-color: #00a9cf;
+    color: #fff;
+    display: block;
+    border: none;
+    font-size: 20px;
+    padding: 7px;
+    margin-top: 20px;
+    width: 100%;
     padding-left: 1%;
 }

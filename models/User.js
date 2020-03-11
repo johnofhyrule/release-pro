@@ -33,15 +33,12 @@ const userSchema = new mongoose.Schema({
     },
     slackHandle: {
         type: String,
-        required: [true, 'Please enter your Slack handle'],
     },
     teams: {
         type: String,
-        required: [true, 'Please enter team(s) you are on'],
     },
     projects: {
         type: String,
-        required: [true, 'Please enter projects you work on'],
     },
     signupDate: {
         type: Date,

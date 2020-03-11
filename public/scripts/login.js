@@ -15,7 +15,7 @@ function handleLoginSubmit(event) {
         email: email,
         password: password,
     }
-
+    console.log(userData);
     // Clear Alert Messages
     document.querySelectorAll('.alert').forEach((alert) => alert.remove());
 
@@ -50,14 +50,15 @@ function handleLoginSubmit(event) {
     });
 
     if (formIsValid) {
+        console.log(userData)
         // SUBMIT DATA TO SERVER
         fetch('/api/v1/auth/login', {
             method: 'POST',
-            header: {
+            headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(userData),
-        })
+            })
             .then((dataStream) => dataStream.json())
             .then((dataObj) => {
                 // console.log(dataObj);

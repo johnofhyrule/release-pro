@@ -94,7 +94,7 @@ h2 {
 .circle-profile{
     width: 200px;
     height: 200px;
-    background-image: url('/public/images/Screen\ Shot\ 2020-03-10\ at\ 8.02.24\ PM.png');
+    background-image: url('../images/Screen\ Shot\ 2020-03-10\ at\ 8.02.24\ PM.png');
     background-size: cover;
     display: block;
     border:3px solid #796eff;
