@@ -17,7 +17,7 @@ const index = (request, response) => {
 // Create Release
 const create = (request, response) => {
     const newRelease = request.body;
-    newRelease.userId = request.session.currentUser.id;
+    newRelease.version = Number(newRelease.version)
     db.Release.create(newRelease, (error, savedRelease) => {
         if (error) return response.status(500).json({
             status: 500,

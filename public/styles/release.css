@@ -53,6 +53,7 @@ hr {
     background-color: none;
     border: none;
     cursor: pointer;
+    margin-left: auto;
 }
 
 .card {

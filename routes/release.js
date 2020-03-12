@@ -8,10 +8,10 @@ router.get('/', ctrl.release.index);
 // CREATE
 router.post('/create', ctrl.release.create);
 // SHOW
-router.get('/', ctrl.release.show);
+router.get('/:id', ctrl.release.show);
 // UPDATE
-router.put('/', ctrl.release.update);
+router.put('/:id', ctrl.release.update);
 // DELETE
-router.delete('/', ctrl.release.destroy);
+router.delete('/:id', ctrl.release.destroy);
 
 module.exports = router;

@@ -10,7 +10,7 @@ const releaseSchema = new mongoose.Schema({
         required: [true, 'OS required'],
     },
     version: {
-        type: Number,
+        type: String,
         required: [true, 'Version required'],
         trim: true,
     },

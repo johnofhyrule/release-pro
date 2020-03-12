@@ -33,11 +33,12 @@ function handleAddReleaseSubmit(event) {
 }
 
 /* --------- RELEASE TAB -------- */
+// --------- APP STATE --------- //
 let release = "";
 
 // --------- GRAB RELEASE --------- //
 function getRelease() {
-    fetch('api/v1/release', {
+    fetch('api/v1/release/', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -55,35 +56,34 @@ getRelease();
 
 // -------- Render release
 function renderRelease(dataObj) {
-    const type = document.getElementById('type');
-    type.innerHTML = "";
-    type.innerHTML = `${dataObj.data.type}`;
+    const build = document.getElementById('build');
+    build.innerHTML = "";
+    build.innerHTML = `${dataObj.data[0].build}`;
 
     const os = document.getElementById('os');
     os.innerHTML = "";
-    os.innerHTML = `${dataObj.data.os}`;
+    os.innerHTML = `${dataObj.data[0].os}`;
 
     const version = document.getElementById('version');
     version.innerHTML = "";
-    version.innerHTML = `${dataObj.data.version}`;
+    version.innerHTML = `${dataObj.data[0].version}`;
 
     const manager = document.getElementById('manager');
     manager.innerHTML = "";
-    manager.innerHTML = `${dataObj.data.manager}`;
+    manager.innerHTML = `${dataObj.data[0].manager}`;
 
     const experiments = document.getElementById('experiments');
-    experiments.innerHTML = "";
-    experiments.innerHTML = `${dataObj.data.experiments}`;
+    experiments.innerHTML = `${dataObj.data[0].experiments}`;
     
     const notes = document.getElementById('notes');
     notes.innerHTML = "";
-    notes.innerHTML = `${dataObj.data.notes}`;
+    notes.innerHTML = `${dataObj.data[0].notes}`;
     
     const incidents = document.getElementById('incidents');
-    incidents.innerHTML = `${dataObj.data.incidents}`;
+    incidents.innerHTML = `${dataObj.data[0].incidents}`;
     
     const postmortem = document.getElementById('postmortem');
-    postmortem.innerHTML = `${dataObj.data.postmortem}`;
+    postmortem.innerHTML = `${dataObj.data[0].postmortem}`;
 };
 
 // -------- EDIT RELEASE --------- //
