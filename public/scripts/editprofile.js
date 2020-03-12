@@ -1,17 +1,17 @@
 /* --------- NAVBAR ---------*/
 // -------- LOGOUT--------- //
-// const logout = document.getElementById('logout');
+const logout = document.getElementById('logout-btn');
 
-// // -------- Submit event listener
-// logout.addEventListener('click', (event) => {
-//     event.preventDefault();
-//     fetch('api/v1/logout', {
-//         method: 'DELETE',
-//     })
-//         .then((dataStream) => dataStream.json())
-//         .then((data) => window.location = '/')
-//         .catch((error) => console.log(error))
-// });
+// -------- Submit event listener
+logout.addEventListener('click', (event) => {
+    event.preventDefault();
+    fetch('api/v1/auth/logout', {
+        method: 'DELETE',
+    })
+        .then((dataStream) => dataStream.json())
+        .then((data) => window.location = '/')
+        .catch((error) => console.log(error))
+});
 
 /* --------- PROFILE FORM -------- */
 // --------- APP STATE --------- //
@@ -19,7 +19,7 @@ let userProfile = '';
 
 // --------- Grab user profile
 function getUser() {
-    fetch('api/v1/users', {
+    fetch('api/v1/users/', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ function getUser() {
     })
     .then((dataStream) => dataStream.json())
     .then((dataObj) => {
-        console.log(dataObj)
+        userProfile = dataObj.data
         renderProfile(dataObj)
     })
     .catch((error) => console.log(error));
@@ -38,26 +38,26 @@ getUser();
 
 // --------- Render profile
 function renderProfile(dataObj) {
-    const firstname = document.getElementById('firstName');
+    const firstname = document.getElementById('firstname');
     firstname.value = `${dataObj.data.firstName}`;
     
-    const lastname = document.getElementById('lastName');
+    const lastname = document.getElementById('lastname');
     lastname.value = `${dataObj.data.lastName}`;
 
     const email = document.getElementById('email');
     email.value = `${dataObj.data.email}`;
 
-    // const slack = document.getElementById('slack');
-    // slack.value = `${dataObj.data.slack}`;
+    const slack = document.getElementById('slack');
+    slack.value = dataObj.data.slack == undefined ? "" : `${dataObj.data.slack}`;
 
     const role = document.getElementById('role');
     role.value = `${dataObj.data.role}`;
     
-    // const teams = document.getElementById('teams');
-    // teams.value = `${dataObj.data.teams}`;
+    const teams = document.getElementById('teams');
+    teams.value = dataObj.data.teams == undefined ? "" : `${dataObj.data.teams}`;
 
-    // const projects = document.getElementById('projects');
-    // projects.value = `${dataObj.data.projects}`;
+    const projects = document.getElementById('projects');
+    projects.value = dataObj.data.projects == undefined ? "" : `${dataObj.data.projects}`;
 };
 
 // -------- EDIT PROFILE --------- //
@@ -78,7 +78,7 @@ function handleEditSubmit(event) {
     const role = document.getElementById('role').value;
     const teams = document.getElementById('teams').value;
     const projects = document.getElementById('projects').value;
-    const password = document.getElementById('password').value;
+    const password = userProfile.password;
 
     const userData = {
         firstname: firstname,
@@ -90,7 +90,7 @@ function handleEditSubmit(event) {
         projects: projects,
         password: password,
     }
-
+console.log(userData)
     // Clear Alert Messages
     document.querySelectorAll('.alert').forEach((alert) => alert.remove());
 
@@ -127,7 +127,7 @@ function handleEditSubmit(event) {
     if (formIsValid) {
         console.log(userData)
         // SUBMIT DATA TO SERVER
-        fetch('/api/v1/users/:id', {
+        fetch('/api/v1/users', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -136,21 +136,26 @@ function handleEditSubmit(event) {
             })
             .then((dataStream) => dataStream.json())
             .then((dataObj) => {
-                // console.log(dataObj);
-                window.location = '/release';
+                window.location = '/release'
             })
             .catch((error) => console.log(error));
     }
 }
 
-// // -------- RELEASE REDIRECT --------- //
-// const releaseForm = document.getElementById('profile-btn');
+/* -------- DELETE USER -------- */
+const deleteUser = document.getElementById('delete');
 
-// // -------- Submit event listener
-// releaseForm.addEventListener('click', handleReleaseSubmit);
+deleteUser.addEventListener('click', (event) => {
+    event.preventDefault();
+    fetch('api/v1/users', {
+        method: 'POST',
+    })
+        .then((dataStream) => dataStream.json())
+        .then((data) => { 
 
-// // -------- Handle submit
-// function handleReleaseSubmit(event) {
-//     localStorage.clear();
-//     window.location = '/release'
-// }
+        window.location = '/index';
+
+        console.log(data)
+    })
+        .catch((error) => console.log(error))
+});

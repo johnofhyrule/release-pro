@@ -33,6 +33,8 @@ function handleAddReleaseSubmit(event) {
 }
 
 /* --------- RELEASE TAB -------- */
+let release = "";
+
 // --------- GRAB RELEASE --------- //
 function getRelease() {
     fetch('api/v1/release', {
@@ -78,11 +80,9 @@ function renderRelease(dataObj) {
     notes.innerHTML = `${dataObj.data.notes}`;
     
     const incidents = document.getElementById('incidents');
-    incidents.innerHTML = "";
     incidents.innerHTML = `${dataObj.data.incidents}`;
     
     const postmortem = document.getElementById('postmortem');
-    postmortem.innerHTML = "";
     postmortem.innerHTML = `${dataObj.data.postmortem}`;
 };
 
@@ -162,11 +162,13 @@ function renderProfile(dataObj) {
     email.innerHTML = `${dataObj.data.email}`;
 
     const slack = document.getElementById('slack');
-    slack.innerHTML = "";
     slack.innerHTML = `${dataObj.data.slack}`;
 
     const role = document.getElementById('role');
     role.innerHTML = `${dataObj.data.role}`;
+
+    const teams = document.getElementById('teams');
+    teams.innerHTML = `${dataObj.data.teams}`;
 
     const projects = document.getElementById('projects');
     projects.innerHTML = `${dataObj.data.projects}`;

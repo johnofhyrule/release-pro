@@ -33,11 +33,11 @@
             <form class="profile-form" id="profileForm">
                 <div class="form-group">
                     <label for="exampleInputFirstName">First Name</label>
-                    <input type="name" class="form-control" id="firstName" aria-describedby="firstNameHelp" placeholder="First Name">
+                    <input type="name" class="form-control" id="firstname" aria-describedby="firstNameHelp" placeholder="First Name">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputLastName">Last Name</label>
-                    <input type="name" class="form-control" id="lastName" aria-describedby="lastNameHelp" placeholder="Last Name">
+                    <input type="name" class="form-control" id="lastname" aria-describedby="lastNameHelp" placeholder="Last Name">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail">Email address</label>
@@ -45,7 +45,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputSlackHandle">Slack Handle</label>
-                    <input type="name" class="form-control" id="slackHandle" aria-describedby="slackHandleHelp" placeholder="@slackhandle">
+                    <input type="name" class="form-control" id="slack" aria-describedby="slackHandleHelp" placeholder="@slackhandle">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Select Role</label>
@@ -67,12 +67,12 @@
                 <div class="row">
                     <div class="col-md-6 left">
                         <div class="edit">
-                            <button type="submit" class="btn-edit">Edit Profile</button>
+                            <button type="submit" class="btn-edit" id="edit">Edit Profile</button>
                         </div>
                     </div>
                     <div class="col-md-6 right">
                         <div class="submit">
-                            <button type="submit" class="btn-delete">Delete Profile</button>
+                            <button type="submit" class="btn-delete" id="delete">Delete Profile</button>
                         </div>
                     </div>
                 </div>

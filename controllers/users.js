@@ -27,7 +27,7 @@ const update = (request, response) => {
     });
 
     db.User.findByIdAndUpdate(
-        reqeust.session.currentUser.id,
+        request.session.currentUser,
         request.body,
         { new: true },
         (error, foundUser) => {

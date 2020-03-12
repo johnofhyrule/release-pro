@@ -6,8 +6,8 @@ const ctrl = require('../controllers');
 // SHOW
 router.get('/', ctrl.users.show);
 // UPDATE
-router.put('/:id', ctrl.users.update);
+router.put('/', ctrl.users.update);
 // DELETE
-router.post('/:id', ctrl.users.destroy);
+router.post('/', ctrl.users.destroy);
 
 module.exports = router;
