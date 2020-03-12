@@ -1,7 +1,7 @@
 const form = document.getElementById('addRelease');
 
 /* -------- Submit Form Event Listener -------- */
-form.addEventListener('submit', handleReleaseSbumit);
+form.addEventListener('click', handleReleaseSbumit);
 
 /* -------- Handle Submit -------- */
 function handleReleaseSbumit(event) {
@@ -60,7 +60,7 @@ function handleReleaseSbumit(event) {
         });
 
         if (formIsValid) {
-            fetch('api/v1/release', {
+            fetch('api/v1/release/create', {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application',
@@ -69,11 +69,22 @@ function handleReleaseSbumit(event) {
             })
             .then((dataStream) => dataStream.json())
             .then((dataObj) => {
-                console.log(dataObj.__id);
-                window.location = '/release'; //NOTE check out where redirect should go to
+                // console.log(dataObj.__id);
+                window.location = '/release'
             })
             .catch((error) => console.log(error));
         }
     }
     newRelease();
+}
+
+const releaseForm = document.getElementById('profile-btn');
+
+// -------- Submit event listener
+releaseForm.addEventListener('click', handleReleaseSubmit);
+
+// -------- Handle submit
+function handleReleaseSubmit(event) {
+    localStorage.clear();
+    window.location = '/release'
 }

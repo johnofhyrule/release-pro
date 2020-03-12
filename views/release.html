@@ -15,18 +15,16 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Release Pro</a>
+        <a class="navbar-brand" href="/">Release Pro</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
+                <li class="nav-item active"></li>
             </ul>
-            <button type="button" class="btn my-2 my-sm-0" id="logout">Log out</button>
+            <button type="submit" class="btn my-2 my-sm-0" id="logout">Log out</button>
         </div>
     </nav>
 <!-- Release Page Nav -->
@@ -45,7 +43,7 @@
                 <li class="nav-item">
                     <a class="nav-link" id="profile-tab" data-toggle="pill" href="#profile" role="tab" aria-controls="calendar" aria-selected="false">Profile</a>
                 </li>
-                <button id="release-btn" type="button" class="btn my-2 my-sm-0">Add New Release</button>
+            <button id="release-btn" type="submit" class="btn my-2 my-sm-0">Add New Release</button>
             </ul>
             <hr>
             <!-- Content for Nav Pills -->
@@ -56,7 +54,7 @@
                         <div class="col mb-4">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title" id="os">Current iOS Release</h5>
+                                    <h5 class="card-title" id="current">Current iOS Release</h5>
                                     <p class="card-text" id="type">Alpha/Beta/Production</p>
                                     <p class="card-text" id="os">iOS/Android</p>
                                     <p class="card-text" id="version">1.1.1395</p>
@@ -65,7 +63,7 @@
                                     <p class="card-text" id="notes">Notes</p>
                                     <p class="card-text" id="incidents">Incidents</p>
                                     <p class="card-text" id="postmortem">Post Mortem</p>
-                                    <button id="edit-release-btn" type="button" class="btn my-2 my-sm-0">Edit Release</button>
+                                    <button id="edit-release-btn" type="submit" class="btn my-2 my-sm-0">Edit Release</button>
                                 </div>
                             </div>
                         </div>
@@ -81,7 +79,7 @@
                                     <p class="card-text" id="notes">Notes</p>
                                     <p class="card-text" id="incidents">Incidents</p>
                                     <p class="card-text" id="postmortem">Post Mortem</p>
-                                    <button id="edit-release-btn" type="button" class="btn my-2 my-sm-0">Edit Release</button>
+                                    <button id="edit-release-btn" type="submit" class="btn my-2 my-sm-0">Edit Release</button>
                                 </div>
                             </div>
                         </div>
@@ -89,15 +87,15 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">iOS Release</h5>
-                                    <p class="card-text" id="type"></p>
-                                    <p class="card-text" id="os"></p>
-                                    <p class="card-text" id="version"></p>
-                                    <p class="card-text" id="manager"></p>
-                                    <p class="card-text" id="experiments"></p>
-                                    <p class="card-text" id="notes"></p>
-                                    <p class="card-text" id="incidents"></p>
-                                    <p class="card-text" id="postmortem"></p>
-                                    <button id="edit-release-btn" type="button" class="btn my-2 my-sm-0">Edit Release</button>
+                                    <p class="card-text" id="type">Alpha/Beta/Production</p>
+                                    <p class="card-text" id="os">iOS/Android</p>
+                                    <p class="card-text" id="version">1.1.1395</p>
+                                    <p class="card-text" id="manager">Release Manager</p>
+                                    <p class="card-text" id="experiments">Experiments</p>
+                                    <p class="card-text" id="notes">Notes</p>
+                                    <p class="card-text" id="incidents">Incidents</p>
+                                    <p class="card-text" id="postmortem">Post Mortem</p>
+                                    <button id="edit-release-btn" type="submit" class="btn my-2 my-sm-0">Edit Release</button>
                                 </div>
                             </div>
                         </div>
@@ -105,15 +103,15 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">Android Release</h5>
-                                    <p class="card-text" id="type"></p>
-                                    <p class="card-text" id="os"></p>
-                                    <p class="card-text" id="version"></p>
-                                    <p class="card-text" id="manager"></p>
-                                    <p class="card-text" id="experiments"></p>
-                                    <p class="card-text" id="notes"></p>
-                                    <p class="card-text" id="incidents"></p>
-                                    <p class="card-text" id="postmortem"></p>
-                                    <button id="edit-release-btn" type="button" class="btn my-2 my-sm-0">Edit Release</button>
+                                    <p class="card-text" id="type">Alpha/Beta/Production</p>
+                                    <p class="card-text" id="os">iOS/Android</p>
+                                    <p class="card-text" id="version">1.1.1395</p>
+                                    <p class="card-text" id="manager">Release Manager</p>
+                                    <p class="card-text" id="experiments">Experiments</p>
+                                    <p class="card-text" id="notes">Notes</p>
+                                    <p class="card-text" id="incidents">Incidents</p>
+                                    <p class="card-text" id="postmortem">Post Mortem</p>
+                                    <button id="edit-release-btn" type="submit" class="btn my-2 my-sm-0">Edit Release</button>
                                 </div>
                             </div>
                         </div>
@@ -138,7 +136,8 @@
                                     <div class="profile-info">
                                         <div class="col-sm-12">
                                             <div class="col-xs-12 col-sm-8">
-                                                <h3 id="name">firstName</h3>
+                                                <h3 id="first-name">firstName</h3>
+                                                <h3 id="last-name">lastName</h3>
                                                 <p id="email">email</p><p id="slack">slackHandle</p>
                                                 <p id="role">role</p>
                                                 <p>Projects I work on:
@@ -153,7 +152,7 @@
                                 <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-centered">
                                     <div class="circle-profile" href="https://www.freepik.com/free-photos-vectors/hand"></div>
                                     <div class="edit-profile">
-                                        <button id="edit-btn" type="button" class="btn my-2 my-sm-0">Edit Profile</button>
+                                        <button id="edit-btn" type="submit" class="btn my-2 my-sm-0">Edit Profile</button>
                                     </div>
                                 </div>
                             </div>
@@ -172,6 +171,6 @@
     <!-- HANDSONTABLE JS -->
     <script src="https://cdn.jsdelivr.net/npm/handsontable@7.4.2/dist/handsontable.full.min.js"></script>
     <!-- CUSTOM JS -->
-    <script src="./scripts/release.js"></script>
+    <script defer src="./scripts/release.js"></script>
 </body>
 </html>

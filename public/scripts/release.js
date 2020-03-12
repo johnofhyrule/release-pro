@@ -1,11 +1,37 @@
-/* --------- BOOTSRAP JS SWITCH TABS -------- */
+/* --------- NAVBAR ---------*/
+// --------- BOOTSRAP JS SWITCH TABS --------- //
 $('#pills-tab a').on('click', function (e) {
     e.preventDefault()
     console.log('trigger!!', $(this).tab('show'))
     $(this).tab('show')
 })
 
+// -------- LOGOUT--------- //
+const form = document.getElementById('logout');
+
+// -------- Submit Event Listener
+form.addEventListener('click', handleLogoutSubmit);
+
+// -------- Handle submit
+function handleLogoutSubmit(event) {
+    localStorage.clear();
+    window.location = '/index'
+}
+
+// -------- ADD RELEASE --------- //
+const releaseButtonForm = document.getElementById('release-btn');
+
+// -------- Submit event listener
+releaseButtonForm.addEventListener('click', handleAddReleaseSubmit);
+
+// -------- Handle submit
+function handleAddReleaseSubmit(event) {
+    localStorage.clear();
+    window.location = '/addrelease'
+}
+
 /* --------- RELEASE TAB -------- */
+// --------- GRAB RELEASE --------- //
 function getRelease() {
     fetch('api/v1/release', {
         method: 'GET',
@@ -16,14 +42,14 @@ function getRelease() {
     })
     .then((dataStream) => dataStream.json())
     .then((dataObj) => {
-        renderProfile(dataObj)
+        renderRelease(dataObj)
     })
     .catch((error) => console.log(error));
 };
 
 getRelease();
 
-// Place user information onto profile
+// -------- Render release
 function renderRelease(dataObj) {
     const type = document.getElementById('type');
     type.innerHTML = "";
@@ -58,7 +84,20 @@ function renderRelease(dataObj) {
     postmortem.innerHTML = `${dataObj.data.postmortem}`;
 };
 
+// -------- EDIT RELEASE --------- //
+const editReleaseForm = document.getElementById('edit-release-btn');
+
+// -------- Submit event listener
+editReleaseForm.addEventListener('click', handleEditReleaseSubmit);
+
+// -------- Handle submit
+function handleEditReleaseSubmit(event) {
+    localStorage.clear();
+    window.location = '/editrelease'
+}
+
 /* --------- HANDSONTABLE JS SPREADSHEET DATA TAB -------- */
+// -------- HARD CODED DATA --------- //
 var data = [
     ['Teams & Features', 'Slack Channel', 'Engineering Manager', 'Product Manager', 'Tech Lead', 'iOS Dev', 'Android Dev', 'QE', 'Product Spec', 'Tech Spec', 'Testing Spec', 'Main Pull Requests'],
     [],
@@ -85,12 +124,12 @@ var hot = new Handsontable(example1, {
 });
 
 /* --------- PROFILE TAB -------- */
-// App state
+// --------- APP STATE --------- //
 let userProfile = '';
 
-// Get user information
+// --------- Grab user profile
 function getUser() {
-    fetch('api/v1/users', {
+    fetch('api/v1/users/', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -107,18 +146,22 @@ function getUser() {
 
 getUser();
 
-// Place user information onto profile
+// --------- Render profile
 function renderProfile(dataObj) {
-    const name = document.getElementById('name');
+    const name = document.getElementById('first-name');
     name.innerHTML = "";
-    name.innerHTML = `${dataObj.data.firstName}
-`;
+    name.innerHTML = `${dataObj.data.firstName}`;
+    
+    const lastname = document.getElementById('last-name');
+    lastname.innerHTML = "";
+    lastname.innerHTML = `${dataObj.data.lastName}`;
 
     const email = document.getElementById('email');
     email.innerHTML = "";
     email.innerHTML = `${dataObj.data.email}`;
 
     const slack = document.getElementById('slack');
+    slack.innerHTML = "";
     slack.innerHTML = `${dataObj.data.slack}`;
 
     const role = document.getElementById('role');
@@ -127,3 +170,15 @@ function renderProfile(dataObj) {
     const projects = document.getElementById('projects');
     projects.innerHTML = `${dataObj.data.projects}`;
 };
+
+// -------- EDIT PROFILE --------- //
+const editProfileForm = document.getElementById('edit-btn');
+
+// -------- Submit event listener
+editProfileForm.addEventListener('click', handleEditProfileSubmit);
+
+// -------- Handle submit
+function handleEditProfileSubmit(event) {
+    localStorage.clear();
+    window.location = '/editprofile'
+}

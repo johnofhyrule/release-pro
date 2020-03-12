@@ -8,7 +8,7 @@
 }
 
 /* -------- NAVBAR STYLING-------- */
-#log-out-btn {
+#logout {
     color: #796eff;
     background-color: none;
     border: none;
@@ -41,6 +41,10 @@
     border: none;
     cursor: pointer;
     margin-left: auto;
+}
+
+hr {
+    border: 1px solid lightgray;
 }
 
 /* -------- RELEASE STYLING -------- */

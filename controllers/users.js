@@ -6,8 +6,8 @@ const show = (request, response) => {
         message: 'Something went wrong, please try again.'
     })
 
-    db.User.findById(request.session.currentUser.id, (error, foundUser) => {
-        // console.log(currentUser);
+    db.User.findById(request.session.currentUser, (error, foundUser) => {
+        console.log(foundUser);
         if (error) return response.status(500).json({
             status: 500,
             message: 'Something went wrong, please try again.'
