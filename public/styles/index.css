@@ -66,6 +66,7 @@ h1 {
 .box1 {
     background-size: cover;
     background-repeat: no-repeat;
+    background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.8)), url('../images/computer-device-earphones-electronics-583842.jpg');
     width: 100vw;
     height: 100vh;
     font-family: 'PT Sans', sans-serif;
@@ -74,18 +75,37 @@ h1 {
 .box2 {
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: #f8f9fa;
+    background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.8)), url('../images/chairs-device-electronics-eyeglasses-1181376.jpg');
     width: 100vw;
     height: 100vh;
     font-family: 'PT Sans', sans-serif;
 }
 
-.box3 {
-    background-size: cover;
+#text2 {
+    padding-top: 3%;
+}
+
+.image2 {
+    max-width: 100%;
+    margin-left: auto;
     background-repeat: no-repeat;
+}
+
+.box3 {
     width: 100vw;
     height: 100vh;
     font-family: 'PT Sans', sans-serif;
+}
+
+#text3 {
+    padding-left: 3%;
+}
+
+.image3 {
+    max-width: 100%;
+    margin-left: auto;
+    background-repeat: no-repeat;
+    color: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.8));
 }
 
 .box4 {

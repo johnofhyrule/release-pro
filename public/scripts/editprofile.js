@@ -1,4 +1,19 @@
-/* --------- PROFILE TAB -------- */
+/* --------- NAVBAR ---------*/
+// -------- LOGOUT--------- //
+// const logout = document.getElementById('logout');
+
+// // -------- Submit event listener
+// logout.addEventListener('click', (event) => {
+//     event.preventDefault();
+//     fetch('api/v1/logout', {
+//         method: 'DELETE',
+//     })
+//         .then((dataStream) => dataStream.json())
+//         .then((data) => window.location = '/')
+//         .catch((error) => console.log(error))
+// });
+
+/* --------- PROFILE FORM -------- */
 // --------- APP STATE --------- //
 let userProfile = '';
 
@@ -32,36 +47,110 @@ function renderProfile(dataObj) {
     const email = document.getElementById('email');
     email.value = `${dataObj.data.email}`;
 
-    const slack = document.getElementById('slack');
-    slack.value = `${dataObj.data.slack}`;
+    // const slack = document.getElementById('slack');
+    // slack.value = `${dataObj.data.slack}`;
 
     const role = document.getElementById('role');
     role.value = `${dataObj.data.role}`;
+    
+    // const teams = document.getElementById('teams');
+    // teams.value = `${dataObj.data.teams}`;
 
-    const projects = document.getElementById('projects');
-    projects.value = `${dataObj.data.projects}`;
+    // const projects = document.getElementById('projects');
+    // projects.value = `${dataObj.data.projects}`;
 };
 
 // -------- EDIT PROFILE --------- //
-const editProfileForm = document.getElementById('edit-btn');
+const form = document.getElementById('profileForm');
 
-// -------- Submit event listener
-editProfileForm.addEventListener('submit', handleEditProfileSubmit);
+// -------- SUBMIT EVENT LISTENER
+form.addEventListener('submit', handleEditSubmit);
 
-// -------- Handle submit
-function handleEditProfileSubmit(event) {
-    localStorage.clear();
-    window.location = '/release'
+// -------- HANDLE SUBMIT
+function handleEditSubmit(event) {
+    let formIsValid = true;
+    event.preventDefault();
+
+    const firstname = document.getElementById('firstname').value;
+    const lastname = document.getElementById('lastname').value;
+    const email = document.getElementById('email').value;
+    const slack = document.getElementById('slack').value;
+    const role = document.getElementById('role').value;
+    const teams = document.getElementById('teams').value;
+    const projects = document.getElementById('projects').value;
+    const password = document.getElementById('password').value;
+
+    const userData = {
+        firstname: firstname,
+        lastname: lastname,
+        email: email,
+        slack: slack,
+        role: role,
+        teams: teams,
+        projects: projects,
+        password: password,
+    }
+
+    // Clear Alert Messages
+    document.querySelectorAll('.alert').forEach((alert) => alert.remove());
+
+    const formInputs = [...form.elements];
+    formInputs.forEach((input) => {
+        input.classList.remove('input-error');
+        if (input.type !== 'submit' && input.value === '') {
+            formIsValid = false;
+            // Add red border to invalid input
+            input.classList.add('input-error');
+            // Add error message below input
+            input.insertAdjacentHTML('afterend', `
+                <div class="alert ${input.id}-mesage">
+                Please enter your ${input.placeholder}
+                </div>
+            `)
+        } else if (input.type === 'password' && input.value.length < 4) {
+            formIsValid = false;
+            // Add reborder to invalid input
+            input.classList.add('input-error');
+            // Add error message below input
+            input.insertAdjacentHTML('afterend', `
+                <div class="alert ${input.id}-messge">
+                Please enter valid password.
+                </div>
+            `)
+        };
+
+        if (formIsValid) {
+            userData[input.name] = input.value;
+        }
+    });
+
+    if (formIsValid) {
+        console.log(userData)
+        // SUBMIT DATA TO SERVER
+        fetch('/api/v1/users/:id', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(userData),
+            })
+            .then((dataStream) => dataStream.json())
+            .then((dataObj) => {
+                // console.log(dataObj);
+                window.location = '/release';
+            })
+            .catch((error) => console.log(error));
+    }
 }
 
-// -------- RELEASE REDIRECT --------- //
-const releaseForm = document.getElementById('profile-btn');
+// // -------- RELEASE REDIRECT --------- //
+// const releaseForm = document.getElementById('profile-btn');
 
-// -------- Submit event listener
-releaseForm.addEventListener('click', handleReleaseSubmit);
+// // -------- Submit event listener
+// releaseForm.addEventListener('click', handleReleaseSubmit);
 
-// -------- Handle submit
-function handleReleaseSubmit(event) {
-    localStorage.clear();
-    window.location = '/release'
-}
+// // -------- Handle submit
+// function handleReleaseSubmit(event) {
+//     localStorage.clear();
+//     window.location = '/release'
+// }

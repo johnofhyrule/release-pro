@@ -7,16 +7,18 @@ $('#pills-tab a').on('click', function (e) {
 })
 
 // -------- LOGOUT--------- //
-const form = document.getElementById('logout');
+const logout = document.getElementById('logout');
 
-// -------- Submit Event Listener
-form.addEventListener('click', handleLogoutSubmit);
-
-// -------- Handle submit
-function handleLogoutSubmit(event) {
-    localStorage.clear();
-    window.location = '/index'
-}
+// -------- Submit event listener
+logout.addEventListener('click', (event) => {
+    event.preventDefault();
+    fetch('api/v1/logout', {
+        method: 'DELETE',
+    })
+        .then((dataStream) => dataStream.json())
+        .then((data) => window.location = '/')
+        .catch((error) => console.log(error))
+});
 
 // -------- ADD RELEASE --------- //
 const releaseButtonForm = document.getElementById('release-btn');
@@ -138,7 +140,6 @@ function getUser() {
     })
     .then((dataStream) => dataStream.json())
     .then((dataObj) => {
-        console.log(dataObj)
         renderProfile(dataObj)
     })
     .catch((error) => console.log(error));
