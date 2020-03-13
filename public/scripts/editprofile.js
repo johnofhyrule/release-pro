@@ -39,10 +39,10 @@ getUser();
 // --------- Render profile
 function renderProfile(dataObj) {
     const firstname = document.getElementById('firstname');
-    firstname.value = `${dataObj.data.firstName}`;
+    firstname.value = `${dataObj.data.firstname}`;
     
     const lastname = document.getElementById('lastname');
-    lastname.value = `${dataObj.data.lastName}`;
+    lastname.value = `${dataObj.data.lastname}`;
 
     const email = document.getElementById('email');
     email.value = `${dataObj.data.email}`;
@@ -152,10 +152,7 @@ deleteUser.addEventListener('click', (event) => {
     })
         .then((dataStream) => dataStream.json())
         .then((data) => { 
-
-        window.location = '/index';
-
-        console.log(data)
+        window.location = '/';
     })
         .catch((error) => console.log(error))
 });

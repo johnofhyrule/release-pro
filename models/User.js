@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-    firstName: {
+    firstname: {
         type: String,
         required: [true, 'First name is required'],
         minlength: [2, 'Your first name must be longer than 2 characters'],
         maxlength: [40, 'Your fist name can not exceed 40 characters'],
         trim: true,
     },
-    lastName: {
+    lastname: {
         type: String,
         required: [true, 'Last name is required'],
         minlength: [2, 'Your last name must be longer than 2 characters'],
@@ -31,7 +31,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please select a role'],
     },
-    slackHandle: {
+    slack: {
         type: String,
     },
     teams: {

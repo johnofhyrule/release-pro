@@ -42,7 +42,6 @@ function getRelease() {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'credentials': 'include',
         },
     })
     .then((dataStream) => dataStream.json())
@@ -149,13 +148,13 @@ getUser();
 
 // --------- Render profile
 function renderProfile(dataObj) {
-    const name = document.getElementById('first-name');
-    name.innerHTML = "";
-    name.innerHTML = `${dataObj.data.firstName}`;
+    const firstname = document.getElementById('firstname');
+    firstname.innerHTML = "";
+    firstname.innerHTML = `${dataObj.data.firstname}`;
     
-    const lastname = document.getElementById('last-name');
+    const lastname = document.getElementById('lastname');
     lastname.innerHTML = "";
-    lastname.innerHTML = `${dataObj.data.lastName}`;
+    lastname.innerHTML = `${dataObj.data.lastname}`;
 
     const email = document.getElementById('email');
     email.innerHTML = "";

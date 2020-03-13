@@ -28,8 +28,8 @@ const signup = (request, response) => {
             // const { firstName, lastName, email, role } = request.body;
 
             const newUser = {
-                firstName: request.body.firstname,
-                lastName: request.body.lastname,
+                firstname: request.body.firstname,
+                lastname: request.body.lastname,
                 email: request.body.email,
                 role: request.body.role,
                 password: hash,
@@ -40,7 +40,7 @@ const signup = (request, response) => {
                 console.log('4')
                 if (error) {
                     console.log(error)
-                    return response.status(400).json({ message: 'Bad request, please try again.' })
+                    return response.status(400).json({ message: 'Bad request, please try again.', error })
                 };
                 console.log(createdUser);
                 response.status(201).json(createdUser);
