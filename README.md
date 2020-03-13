@@ -28,7 +28,24 @@ Each member will have access to the Features Owner Doc. This doc will be a sourc
 ![releaseERD](https://user-images.githubusercontent.com/8944581/76157141-bc255180-60b9-11ea-94fb-9a618d04dc74.JPG)
 
 ## Milestones
+Create Frontend/Backend
+Create Users
+Create Release Forms
+Create Features Owner Doc
+Create Landing
 
 ## Dependencies Installed
+bcryptjs
+body-parser
+connect-mongo
+express
+express-session
+handsontable
+mongodb
+mongoose
+nodemon
 
 ## Technologies
+Frontend - HTML, CSS, JS
+Backend - Mongoose, Express, Node
+Auth - Users

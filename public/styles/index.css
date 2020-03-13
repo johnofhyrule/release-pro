@@ -38,6 +38,14 @@
     box-shadow: 0 0 0 0.1rem #796eff;
 }
 
+.modal-notify .modal-header {
+    border-radius: 3px 3px 0 0;
+}
+
+.modal-notify .modal-content {
+    border-radius: 3px;
+}
+
 /* -------- Body Styling -------- */
 h1 {
     font-family: 'PT Sans', sans-serif;
@@ -56,39 +64,29 @@ h1 {
     cursor: pointer;
 }
 
-.modal-notify .modal-header {
-    border-radius: 3px 3px 0 0;
-}
-.modal-notify .modal-content {
-    border-radius: 3px;
-}
-
 .box1 {
     background-size: cover;
     background-repeat: no-repeat;
     background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.8)), url('../images/computer-device-earphones-electronics-583842.jpg');
     width: 100vw;
     height: 100vh;
+
     font-family: 'PT Sans', sans-serif;
 }
 
 .box2 {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.8)), url('../images/chairs-device-electronics-eyeglasses-1181376.jpg');
     width: 100vw;
     height: 100vh;
+    background-color: #f8f9fa;
     font-family: 'PT Sans', sans-serif;
 }
 
 #text2 {
-    padding-top: 3%;
+    padding-top: 18%;
 }
 
-.image2 {
-    max-width: 100%;
-    margin-left: auto;
-    background-repeat: no-repeat;
+#image2 {
+    padding-top: 2%;
 }
 
 .box3 {
@@ -98,14 +96,8 @@ h1 {
 }
 
 #text3 {
-    padding-left: 3%;
-}
-
-.image3 {
-    max-width: 100%;
-    margin-left: auto;
-    background-repeat: no-repeat;
-    color: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.8));
+    padding-top: 5%;
+    padding-left: 5%;
 }
 
 .box4 {
@@ -117,12 +109,27 @@ h1 {
     font-family: 'PT Sans', sans-serif;
 }
 
+#text4 {
+    padding-top: 5%;
+    padding-right: 5%;
+}
+
+#image4 {
+    padding-top: 8%;
+    margin-right: auto;
+}
+
 .box5 {
     background-size: cover;
     background-repeat: no-repeat;
     width: 100vw;
     height: 100vh;
     font-family: 'PT Sans', sans-serif;
+}
+
+#text5 {
+    padding-top: 20%;
+    padding-left: 8%;
 }
 
 .content {

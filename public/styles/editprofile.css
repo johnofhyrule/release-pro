@@ -8,7 +8,7 @@
 }
 
 /* -------- Navbar Styling -------- */
-#profile-btn {
+#logout-btn {
     color: #ffffff;
     background-color: #796eff;
     border: none;
@@ -34,7 +34,7 @@ h1 {
 
 .container {
     box-shadow: 0 2px 10px rgba(0,0,0,.3);
-    height: 80%;
+    height: 85%;
     width: 60%;
     padding: 40px 40px;
     font-family: 'PT Sans', sans-serif;

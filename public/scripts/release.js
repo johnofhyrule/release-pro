@@ -12,7 +12,7 @@ const logout = document.getElementById('logout');
 // -------- Submit event listener
 logout.addEventListener('click', (event) => {
     event.preventDefault();
-    fetch('api/v1/logout', {
+    fetch('api/v1/auth/logout', {
         method: 'DELETE',
     })
         .then((dataStream) => dataStream.json())
